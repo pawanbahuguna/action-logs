@@ -17,7 +17,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2.0.0
       - name: Download 24hrs Old Logs
-        uses: pawanbahuguna/action-logs/@v1.0.0
+        uses: pawanbahuguna/action-logs/@v1.0.1
         env: 
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           GH_REPO: ${{ github.repository }}
@@ -35,7 +35,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2.0.0
       - name: Download Logs
-        uses: pawanbahuguna/action-logs/@v1.0.0
+        uses: pawanbahuguna/action-logs/@v1.0.1
         env: 
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           GH_REPO: ${{ github.repository }}
@@ -58,7 +58,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2.0.0
       - name: Download Logs
-        uses: pawanbahuguna/action-logs/@v1.0.0
+        uses: pawanbahuguna/action-logs/@v1.0.1
         env: 
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           GH_REPO: ${{ github.repository }}
