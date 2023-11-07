@@ -21,12 +21,30 @@ jobs:
         env: 
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           GH_REPO: ${{ github.repository }}
-          ONLY_24: false # Default set to true [Optional]
-          LOGS_DIR: <Directory name> # Default sets to jobs-log [Optional]
+```
+
+### Example 2: `workflow.yml`
+
+```yaml
+on: [push]
+
+jobs:
+  logs-download:
+    name: Download GH action logs
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2.0.0
+      - name: Download Logs
+        uses: pawanbahuguna/action-logs/@v1.0.0
+        env: 
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+          ONLY_24: false # Default is true [Optional]
+          LOGS_DIR: <Directory name> # Default is jobs-log [Optional]
 ```
 
 
-### Example 2: `workflow-schedule.yml`
+### Example 3: `workflow-schedule.yml`
 
 ```yaml
 on:
@@ -39,13 +57,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2.0.0
-      - name: Download 24hrs Old Logs
+      - name: Download Logs
         uses: pawanbahuguna/action-logs/@v1.0.0
         env: 
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           GH_REPO: ${{ github.repository }}
-          ONLY_24: false # Default is true
-          LOGS_DIR: <Directory name> # Default is jobs-log
+          ONLY_24: false # Default is true [Optional]
+          LOGS_DIR: <Directory name> # Default is jobs-log [Optional]
 ```
 
 ## GitHub Token Permission
