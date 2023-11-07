@@ -21,8 +21,8 @@ jobs:
         env: 
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           GH_REPO: ${{ github.repository }}
-          ONLY_24: false # Default set to true
-          LOGS_DIR: <Directory name> # Default sets to jobs-log
+          ONLY_24: false # Default set to true [Optional]
+          LOGS_DIR: <Directory name> # Default sets to jobs-log [Optional]
 ```
 
 
@@ -44,8 +44,8 @@ jobs:
         env: 
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           GH_REPO: ${{ github.repository }}
-          ONLY_24: false # Default set to true
-          LOGS_DIR: <Directory name> # Default sets to jobs-log
+          ONLY_24: false # Default is true
+          LOGS_DIR: <Directory name> # Default is jobs-log
 ```
 
 ## GitHub Token Permission
