@@ -1,6 +1,6 @@
-# GitHub Action to download Jobs logs
+# GitHub Action to download Job logs
 
-This action will download job level logs for GitHub Action Workflow. By default action will only download logs for past 24 hours.
+This action will download job-level logs for the GitHub Action Workflow. By default, the action will only download logs for the past 24 hours.
 
 
 ## Usage
