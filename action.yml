@@ -1,0 +1,10 @@
+# action.yml
+name: 'GitHub Action Logs'
+description: 'GH Action to download logs using GH API'
+author: 'Pawan Bahuguna'
+branding:
+  icon: 'download'
+  color: 'green'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
