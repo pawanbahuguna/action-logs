@@ -5,7 +5,7 @@
 # Script to Download job-level logs for the past 24hrs or all the logs
 # Author: Pawan Bahuguna
 # GitHub: https://github.com/pawanbahuguna/action-logs
-# Version: v1.0
+# Version: v1.0.2
 ########################
 
 C_RED="\033[0;31m" # Red
@@ -32,7 +32,8 @@ fi
 if [ "$ONLY_24" == "false" ]; then
   echo "Processing all the logs"
 else 
-  OLD_DATE=$(date -d '24 hours ago' +'%Y-%m-%dT%H:%M:%SZ')
+  OLD_DATE=$(date -v -24H +'%Y-%m-%dT%H:%M:%SZ')
+  
   echo "Will only process 24hrs logs before or equal to $OLD_DATE"
 fi
 
