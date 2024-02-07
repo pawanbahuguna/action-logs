@@ -1,8 +1,7 @@
-FROM alpine
+FROM ubuntu
 
-RUN apk add --update curl jq && \
-    rm -rf /var/cache/apk/*
+RUN apt update && apt install curl jq -y
 COPY entrypoint.sh /entrypoint.sh
-RUN  chmod +x /entrypoint.sh
+RUN chmod +x /entrypoint.sh
 
-ENTRYPOINT [ "/entrypoint.sh" ]
+ENTRYPOINT ["/entrypoint.sh"]
