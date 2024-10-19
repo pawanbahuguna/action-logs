@@ -1,6 +1,6 @@
 # GitHub Action to download Job logs
 
-This action will download job-level logs for the GitHub Action Workflow. By default, the action will only download logs for the past 24 hours.
+This action will download job-level logs for the GitHub Action Workflow. The action will only download logs for the past 24 hours by default.
 
 
 ## Usage
@@ -15,9 +15,9 @@ jobs:
     name: Download GH action logs
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2.0.0
+      - uses: actions/checkout@v4.2.1
       - name: Download 24hrs Old Logs
-        uses: pawanbahuguna/action-logs/@v1.0.1
+        uses: pawanbahuguna/action-logs/@v2.0.0
         env: 
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           GH_REPO: ${{ github.repository }}
@@ -33,9 +33,9 @@ jobs:
     name: Download GH action logs
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2.0.0
+      - uses: actions/checkout@v4.2.1
       - name: Download Logs
-        uses: pawanbahuguna/action-logs/@v1.0.1
+        uses: pawanbahuguna/action-logs/@v2.0.0
         env: 
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           GH_REPO: ${{ github.repository }}
@@ -56,9 +56,9 @@ jobs:
     name: Download GH action logs
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2.0.0
+      - uses: actions/checkout@v4.2.1
       - name: Download Logs
-        uses: pawanbahuguna/action-logs/@v1.0.1
+        uses: pawanbahuguna/action-logs/@v2.0.0
         env: 
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           GH_REPO: ${{ github.repository }}
@@ -68,7 +68,7 @@ jobs:
 
 ## GitHub Token Permission
 
-Generate [fine-grained token](https://github.com/settings/tokens?type=beta) for the repo with **Read access to actions, code, and metadata**
+Generate [fine-grained token](https://github.com/settings/tokens?type=beta) for the repo with **Read access to actions, contents (code), and metadata**
 
 
 ## License
