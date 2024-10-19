@@ -1,7 +1,13 @@
-FROM ubuntu
+FROM alpine
 
-RUN apt update && apt install curl jq -y
+# Install necessary packages (curl and jq)
+RUN apk update && apk add --no-cache curl jq
+
+# Copy the entrypoint script to the container
 COPY entrypoint.sh /entrypoint.sh
+
+# Make the script executable
 RUN chmod +x /entrypoint.sh
 
-ENTRYPOINT ["/entrypoint.sh"]
+# Set the entrypoint to the script
+ENTRYPOINT [ "/entrypoint.sh" ]
