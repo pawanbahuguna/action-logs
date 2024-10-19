@@ -32,7 +32,19 @@ fi
 if [ "$ONLY_24" == "false" ]; then
   echo "Processing all the logs"
 else 
-  OLD_DATE=$(date -d '24 hours ago' +'%Y-%m-%dT%H:%M:%SZ')
+  # Check for OS and use the appropriate date command
+  if [ "$(uname)" = "Linux" ]; then
+    if [ -f /etc/alpine-release ]; then
+      # Alpine Linux
+      OLD_DATE=$(date -u -D '%s' -d $(( $(date +%s) - 24*60*60 )) +'%Y-%m-%dT%H:%M:%SZ')
+    else
+      # Other Linux
+      OLD_DATE=$(date -d '24 hours ago' +'%Y-%m-%dT%H:%M:%SZ')
+    fi
+  else
+    # Assume BSD-style date (e.g., macOS)
+    OLD_DATE=$(date -v-24H +'%Y-%m-%dT%H:%M:%SZ')
+  fi
   echo "Will only process 24hrs logs before or equal to $OLD_DATE"
 fi
 
