@@ -49,15 +49,15 @@ else
 fi
 
 error_msg () {
- echo "${C_RED}$*${C_RST}"
+ printf "${C_RED}$*${C_RST}"
 }
 
 success_msg () {
- echo "${C_GRN}$*${C_RST}"
+ printf "${C_GRN}$*${C_RST}"
 }
 
 info_msg () {
- echo "${C_BLU}$*${C_RST}"
+ printf "${C_BLU}$*${C_RST}"
 }
 
 clean_up () {
