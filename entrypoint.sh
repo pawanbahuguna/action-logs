@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 ########################
 #
@@ -29,7 +29,7 @@ if [ -z "$ONLY_24" ]; then
   ONLY_24="true"
 fi
 
-if [ "$ONLY_24" == "false" ]; then
+if [ "$ONLY_24" = "false" ]; then
   echo "Processing all the logs"
 else 
   # Check for OS and use the appropriate date command
@@ -48,16 +48,16 @@ else
   echo "Will only process 24hrs logs before or equal to $OLD_DATE"
 fi
 
-function error_msg () {
- echo -e "${C_RED}$*${C_RST}"
+error_msg () {
+ echo "${C_RED}$*${C_RST}"
 }
 
-function success_msg () {
- echo -e "${C_GRN}$*${C_RST}"
+success_msg () {
+ echo "${C_GRN}$*${C_RST}"
 }
 
-function info_msg () {
- echo -e "${C_BLU}$*${C_RST}"
+info_msg () {
+ echo "${C_BLU}$*${C_RST}"
 }
 
 clean_up () {
@@ -95,12 +95,12 @@ get_jobs_logs () {
 
 get_run_id
 # Check if there are any workflow runs
-if [[ "$TOTAL_COUNT" -eq 0 ]]; then
+if [ "$TOTAL_COUNT" -eq 0 ]; then
     error_msg "No workflow runs found."
     exit 1
 else
     get_job_id
-    if [[ -f $JOB_FILE ]]; then
+    if [ -f $JOB_FILE ]; then
      get_jobs_logs
      success_msg "Logs Downloaded and saved!"
      clean_up
